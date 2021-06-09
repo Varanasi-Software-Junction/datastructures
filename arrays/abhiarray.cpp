@@ -42,21 +42,27 @@ int main()
                 }
                 break;
             case 3:
-                {
-                int p;
-                int z=pos-1;
+ {
+                int p=0;
+                //int z=pos-2;
                 cout<<"Enter the element you want to delete:"<<endl;
                 cin>>m;
-                for(int i=0 ; i<=z;i++)
+                for(int i=pos-1 ; i>=0;i--)
                 {
                     if(a[i]==m) 
                     {
-                        a[i]=a[i+1];
-                        p=i;
-                        pos--;
+                        p++;
+                        for(int j=i;j<=pos-2;j++)
+                        {
+                            a[j]=a[j+1];
+                        }
+                        
+                        
                     }
-                    else if(i>p) a[i]=a[i+1];
+                    
+                    //else if(i>p) a[i]=a[i+1];
                 }
+                pos=pos-p;
                 }
                 break;
 
