@@ -10,7 +10,7 @@ int main()
     int x,n,m;
     while(1){
         cout<<"---------------------------------------------------------------------------------------------------"<<endl;
-        cout<<"Type 1 to add element\n\t 2 replace any element\n\t3 to delete an element\n\t5 to show array\n\t 0 to exit program"<<endl;
+        cout<<"Type 1 to add element\n\t 2 replace any element\n\t3 to delete an element\n\t4 to perform Binary search\n\t5 to show array\n\t6 to find max and second max\n\t 0 to exit program"<<endl;
         cin>>x;
         switch(x){
             case 1:
@@ -65,6 +65,44 @@ int main()
                 pos=pos-p;
                 }
                 break;
+            case 4:
+            {
+                    int s;
+                cout<<"Enter value for search:"<<endl;
+                cin>>s;
+                int l=0;
+                 int r = size-1;
+                while(1)
+                {
+                    int mid=(r+l)/2;
+                    if( s==a[mid])
+                        {
+                            cout<<"l = "<<l<<" mid= "<<mid<<" r= "  <<r<<endl;
+                            cout<<s<<" is found at index "<<mid<<endl;
+                             break;
+                       } 
+            
+                     if(s<a[mid])
+                    {
+                        cout<<"l = "<<l<<" mid= "<<mid<<" r= "  <<r<<endl;         
+                             r=mid-1;
+                        }
+                    else{
+                            cout<<"l = "<<l<<" mid= "<<mid<<" r= "  <<r<<endl;
+                        l=mid+1;
+                
+            
+                    }
+                       if(r<l)
+                        {
+                                cout<<s<<" does not exist in array"<<endl;
+                                break;
+
+                        }       
+                 }
+            }
+                break;
+
 
             case 5:
  {            
@@ -81,6 +119,37 @@ int main()
 
  }
                 break;
+            case 6:
+            { int m1,m2;
+                 for(int i=1 ;i<pos; i++)
+                {
+                    if(i==1) //for assinging m1 larger of first two element and m2 smaller of frist two element
+                    {
+                         if(a[0]>a[1])
+                            {
+                                m1=a[0];
+                                m2=a[1];
+                            }
+                        else{
+                            m1=a[1];
+                            m2=a[0];
+                        }
+                    }
+                    if(a[i]>=m1)
+                    {
+                        m2=m1;
+                        m1=a[i];
+                    }
+                    else if(a[i]>m2)
+                    {
+                        m2=a[i];
+                    }
+          
+                } 
+                cout<<"Max="<<m1<<" Second max= "<<m2<<endl;
+            }
+            break;
+
             case 0:
                 return 0;
                 

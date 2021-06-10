@@ -11,10 +11,10 @@ void incr()
    i++;
    cout<<"incr"<<endl;
 }
-void condition()
+int condition()
 {
    cout<<"condition"<<endl;
- //  return i<=10;
+   return i<=10;
 }
 int main(){
 for(initialize();condition();incr())
