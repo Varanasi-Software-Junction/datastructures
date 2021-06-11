@@ -1,1 +1,1 @@
-cout
+p=i;  //changing starting index for next sequence
