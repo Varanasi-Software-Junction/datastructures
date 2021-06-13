@@ -1,4 +1,10 @@
- int size =sizeof(a)/sizeof(int);
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[]={9,8,7,6,5,5,5,5};
+    
+    int size =sizeof(a)/sizeof(int);
     int output[size];
     int frequency[10]={0};
      for(int l=0; l<=size-1;l++)//printing above array
@@ -24,3 +30,10 @@
         output[frequency[a[i]]]=a[i];
 
     }
+
+    for(int l=0; l<=size-1;l++)
+    {
+        cout<<output[l]<<",";
+    }
+    return 0;
+}
