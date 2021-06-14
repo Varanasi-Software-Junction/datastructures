@@ -1,26 +1,19 @@
- int size =sizeof(a)/sizeof(int);
-    int output[size];
-    int frequency[10]={0};
-     for(int l=0; l<=size-1;l++)//printing above array
-    {
-        cout<<a[l]<<",";
-    }
-    cout<<endl;
 
-    for(int i=0; i<=size-1;i++)//storing frquency of different numbers in range (0-9) 
-    {
-        frequency[a[i]]++;
+        }
+        if(f==0)
+        {
+            sumprime=sumprime+a[i][j];
+        }
+        
+        }
     }
-    for(int i =1 ;i<=10-1;i++)//storing cumulative frequency of i
-    {
-        frequency[i]= frequency[i] + frequency[i-1];
-    }
-    for(int i=0;i<=9;i++)//printing cumulative frequency
-    cout<<frequency[i]<<",";
-    cout<<endl;
-    for(int i= size-1; i>=0; i--) //sorting
-    {
-        frequency[a[i]]--;
-        output[frequency[a[i]]]=a[i];
+}
+cout<<"\n sum of diagonal elements is "<<sum<<endl;
+cout<<"\n sum of diagonal elements which are prime is "<<sumprime<<endl;
 
-    }
+
+
+    return 0;
+}
+
+
