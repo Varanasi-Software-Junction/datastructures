@@ -76,7 +76,7 @@ for(int i=0; i<=ra-1; i++)
            // cout<<a[i][j];
         }
         
-        }
+        } 
     }
 }
 cout<<"\n sum of diagonal elements is "<<sum<<endl;
