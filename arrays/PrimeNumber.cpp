@@ -69,3 +69,14 @@ int main()
     cout<<"\n"<<count<<endl;
     return 0;
 }
+/* 3+2=5  prime
+5+2=7   prime 
+7+4=11  prime           All the prime numbers will lie with in this sequence
+11+2=13 prime
+13+4=17 Prime
+17+2=19 prime
+19+4=23 prime
+23+2=25 Not prime
+25+4=29 prime
+29+2=31 prime
+*/
