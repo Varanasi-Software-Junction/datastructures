@@ -130,6 +130,8 @@ int main()
 
     //cout<<precedence(a[5])<<endl;
 
+    
+
 
     return 0;
 }
