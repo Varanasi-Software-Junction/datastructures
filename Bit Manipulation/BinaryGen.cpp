@@ -2,7 +2,7 @@
 using namespace std; 
 int main()
 {
-    int n=4;
+    int n=6;
     int a[n]={0};
     //cout<<a[2]<<a[1]<<a[0]<<endl;
     while(true)

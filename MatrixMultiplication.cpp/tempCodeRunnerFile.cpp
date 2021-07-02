@@ -1,0 +1,1 @@
+size[i]*size[i+1]*size[i+2];
