@@ -1,0 +1,1 @@
+cout<<p->type<<" "<<q->type<<" "<<r->type<<endl;
