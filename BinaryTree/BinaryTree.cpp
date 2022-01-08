@@ -20,11 +20,74 @@ void deleteNode(TreeNode** root,int data);
 //Delete Node
 int treeHeight(TreeNode* root);
 //Find the tree height
+int max(int x,int y);
 int main()
 {
    TreeNode* root=NULL;
+int choice,value;
+while (1)
+{
+    printf("0-EXIT.1-INSERT,2-PRE,3-IN,4-POST,5-HEIGHT,6-DELETE\n");
+    scanf("%d",&choice);
+    switch (choice)
+    {
+    case 0:
+        return 0;
+        break;
+    case 1:
+        printf("Enter value to insert\n");
+        scanf("%d",&value);
+        addNode(&root,value);
+        break;
+    case 2:
+        printf("\n");
+        preOrder(root);
+        printf("\n");
+        break;
+    case 3:
+        printf("\n");
+        inOrder(root);
+        printf("\n");
+        break;
+    case  4:
+        printf("\n");
+        postOrder(root);
+        printf("\n");
+        break;
+    case  5:
+        printf("\n");
+        printf("Height=%d",treeHeight(root));
+        printf("\n");
+        break;
+    case  6:
+        printf("\nEnter value to delete\n");
+        scanf("%d",&value);
+        deleteNode(&root,value);
+        break;
+//1,10,5,20,4,30,6
+
+    
+    default:
+        break;
+    }
+}
 
     return 0;
+}
+int treeHeight(TreeNode* root)
+{
+    if(root==NULL)
+    return 0;
+    else 
+    return 1 + max(treeHeight(root->left),treeHeight(root->right));
+}
+int max(int x,int y)
+{
+    if(x>=y)
+    return x;
+    else 
+    return y;
+
 }
 void deleteNode(TreeNode** root,int data)
 {
@@ -69,7 +132,7 @@ rightnode=nodetodelete->right;
 TreeNode* temp=*root;
 while (temp->right!=NULL)
 {
-    temp=temp->left;
+    temp=temp->right;
 }
 temp->right=rightnode;
 }
