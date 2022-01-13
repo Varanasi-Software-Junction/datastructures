@@ -3,6 +3,7 @@
 #define size 20//Max Size of Queue
 
 
+
 typedef struct mynode{//Typedef for TreeNode
     int data;//Data of the node
   struct  mynode* left;//Left subtree
@@ -10,6 +11,16 @@ typedef struct mynode{//Typedef for TreeNode
 
 
 } TreeNode;//define struct name
+
+typedef struct stacknode
+{
+    int top;
+    TreeNode* data[30];//data of the treenode
+}Stack;
+void sInit(Stack* st);
+void push(Stack* st,TreeNode* root);
+TreeNode* pop(Stack* st);
+int sempty(Stack st);
 
 typedef struct {//typedef for queue
     TreeNode* data[30];//data of the treenode
@@ -20,6 +31,7 @@ typedef struct {//typedef for queue
 void addNode(TreeNode** root,int data);
 //Add a new node
 void preOrder(TreeNode* root);
+void preOrderStack(TreeNode* root);
 //Pre Order traversal
 void inOrder(TreeNode* root);
 //In Order traversal
@@ -56,7 +68,7 @@ Queue q;
 init(&q);
 while (1)
 {
-    printf("0-EXIT.1-INSERT,2-PRE,3-IN,4-POST,5-HEIGHT,6-DELETE,7-serch Node,8-count,9-BFS,10-Width\n");
+    printf("0-EXIT.1-INSERT,2-PRE,3-IN,4-POST,5-HEIGHT,6-DELETE,7-Search Node,8-count,9-BFS,10-Width,11-Stack Pre Order\n");
     scanf("%d",&choice);
     switch (choice)
     {
@@ -74,7 +86,7 @@ while (1)
         printf("\n");
         break;
     case 3://this case use for creat inorder case
-        printf("\n");//creat new line
+        printf("\n");//create new line
         inOrder(root);//fuction calling
         printf("\n");
         break;
@@ -104,8 +116,12 @@ while (1)
     case 9:
         bfs(root);//function calling
         break;
-    case 10://this fucction use for create maxbreadth in Tree graph
+    case 10://this function use for create maxbreadth in Tree graph
         printf("Breadth=%d\n",breathHeight(root));
+        break;
+
+    case 11://Stack Preorder
+        preOrderStack(root);
         break;
 //1,10,5,20,4,30,6
 
@@ -117,6 +133,73 @@ while (1)
 
     return 0;
 }
+
+
+void sInit(Stack* st)
+{
+    st->top=-1;
+}
+void push(Stack* st,TreeNode* root)
+{
+    if( st->top>=size-1)
+    {
+        printf("Stack is full\n");
+        return;
+
+    }
+    st->top++;
+    st->data[st->top]=root;
+
+}
+TreeNode* pop(Stack* st)
+{
+    TreeNode* root;
+    if(st->top<0)
+    {
+        printf("Stack is empty\n");
+        return NULL;
+    }
+    root=st->data[st->top];
+    st->top--;
+    return root;
+
+}
+int sempty(Stack st)
+{
+    if(st.top<0)
+    return 1;
+    return 0;
+}
+
+
+
+
+void preOrderStack(TreeNode* root)
+{
+    Stack st;
+ if(root==NULL)
+ return;
+sInit(&st);
+push(&st,root);
+printf("\n");
+while (1)
+{
+    if(sempty(st))
+    break;
+    root=pop(&st);
+    while (root!=NULL)
+    {
+        printf("%d,",root->data);
+        if(root->right!=NULL)
+        push(&st,root->right);
+        root=root->left;
+    }
+    }
+printf("\n");
+}
+
+
+
 
 void bfs(TreeNode* root)//function name
 {//function body
