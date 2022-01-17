@@ -6,18 +6,25 @@ int minvalue(int x,int y);
 int main()
 {
     int n=5;
+    int x;
+    int used[5]={0};
     int distances[5][5]={
         {-1,10,infinity,5,infinity},
         {infinity,-1,1,2,infinity},
         {infinity,infinity,-1,infinity,4},
         {infinity,3,9,-1,2},{7,infinity,6,infinity,-1}
         };
-        int min=distances[0][1],minpos=1,i;
+        
 
     printall(distances);
     //Find the position of the min element in line 0
+    while(1)
+    {
+        int min=infinity,minpos=-1,i;
     for(i=1;i<=n-1;i++)
     {
+        if(used[i])
+        continue;
         if(distances[0][i]<min)
         {
             min=distances[0][i];
@@ -25,6 +32,7 @@ int main()
         }
     }
     int startdistance=distances[0][minpos];
+    used[minpos]=1;
     for(i=1;i<=n-1;i++)
     {
         if(i==minpos)
@@ -35,10 +43,14 @@ int main()
     }
     printf("\n\n");
 printall(distances);
+if(min>=infinity)
+return 0;
+printf("min=%d\tpos=%d, A to %c\n",min,minpos,minpos + 'A' );
+scanf("%d",&x);
+    }
 
 
-
-    printf("min=%d\tpos=%d\n",min,minpos);
+    
     
 
 }
