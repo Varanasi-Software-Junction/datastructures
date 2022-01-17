@@ -174,6 +174,41 @@ int sempty(Stack st)
 
 
 
+
+
+
+
+
+void inOrderStack(TreeNode* root)
+{
+    Stack st;
+ if(root==NULL)
+ return;
+sInit(&st);
+push(&st,root);
+printf("\n");
+while (1)
+{
+    if(sempty(st))
+    break;
+    root=pop(&st);
+    printf("%d,",root->data);
+    while (root!=NULL)
+    {
+        
+        if(root!=NULL)
+        push(&st,root);
+        root=root->left;
+    }
+    }
+printf("\n");
+}
+
+
+
+
+
+
 void preOrderStack(TreeNode* root)
 {
     Stack st;
@@ -197,6 +232,9 @@ while (1)
     }
 printf("\n");
 }
+
+
+
 
 
 
