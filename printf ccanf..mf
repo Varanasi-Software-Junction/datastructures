@@ -1,0 +1,189 @@
+Certainly! `printf` and `scanf` are functions commonly used in the C programming language for input and output operations. 
+
+1. `printf`:
+The `printf` function is used to display formatted output on the console or terminal. It allows you to print text, variables, and expressions with different formatting options. Here's an example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number = 10;
+    float floatNumber = 3.14;
+    char character = 'A';
+    
+    printf("This is a number: %d\n", number);
+    printf("This is a float number: %.2f\n", floatNumber);
+    printf("This is a character: %c\n", character);
+    
+    return 0;
+}
+```
+
+Output:
+```
+This is a number: 10
+This is a float number: 3.14
+This is a character: A
+```
+
+In the example above, we use the `%d` format specifier for integers, `%f` for floats, and `%c` for characters. The format specifiers are replaced by the values of the corresponding variables in the output.
+
+2. `scanf`:
+The `scanf` function is used to read input from the user through the console or terminal. It allows you to assign values to variables based on the user's input. Here's an example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    char name[20];
+    
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    
+    printf("Enter your name: ");
+    scanf("%s", name);
+    
+    printf("You entered number: %d\n", number);
+    printf("Your name is: %s\n", name);
+    
+    return 0;
+}
+```
+
+Output:
+```
+Enter a number: 25
+Enter your name: John
+You entered number: 25
+Your name is: John
+```
+
+In the example above, `scanf` is used to read an integer and a string from the user. The `%d` format specifier is used to read an integer, and `%s` is used to read a string (character array). The `&` operator is used to pass the memory address of the variable where the input value should be stored.
+
+Remember to include the `<stdio.h>` header at the beginning of your C program to use the `printf` and `scanf` functions, as they are defined in this header file.
+
+
+#include <stdio.h>
+
+int main() {
+    int number = 10;
+    float floatNumber = 3.14;
+    char character = 'A';
+    
+    printf("This is a number: %d\n", number);
+    printf("This is a float number: %.2f\n", floatNumber);
+    printf("This is a character: %c\n", character);
+    
+    return 0;
+}
+
+
+
+
+Output:
+
+This is a number: 10
+This is a float number: 3.14
+This is a character: A
+
+
+
+In the example above, we use the %d format specifier for integers, %f for floats, and %c for characters. The format specifiers are replaced by the values of the corresponding variables in the output.
+
+scanf:
+The scanf function is used to read input from the user through the console or terminal. It allows you to assign values to variables based on the user's input. Here's an example:
+
+#include <stdio.h>
+
+int main() {
+    int number;
+    char name[20];
+    
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    
+    printf("Enter your name: ");
+    scanf("%s", name);
+    
+    printf("You entered number: %d\n", number);
+    printf("Your name is: %s\n", name);
+    
+    return 0;
+}
+
+
+
+
+Output:
+
+
+
+Enter a number: 25
+Enter your name: John
+You entered number: 25
+Your name is: John
+
+
+
+In the example above, scanf is used to read an integer and a string from the user. The %d format specifier is used to read an integer, and %s is used to read a string (character array). The & operator is used to pass the memory address of the variable where the input value should be stored.
+
+Remember to include the <stdio.h> header at the beginning of your C program to use the printf and scanf functions, as they are defined in this header file.
+
+
+
+Here's a list of commonly used format specifiers in C with an example for each:
+#include <stdio.h>
+
+int main() {
+    int number = 42;
+    printf("The number is: %d\n", number);  // %d - Integer format specifier
+
+    float floatValue = 3.14159;
+    printf("The value of pi is: %.2f\n", floatValue);  // %f - Float format specifier
+
+    char ch = 'A';
+    printf("The character is: %c\n", ch);  // %c - Character format specifier
+
+    char name[] = "John";
+    printf("Hello, %s!\n", name);  // %s - String format specifier
+
+    int hexNumber = 42;
+    printf("The hexadecimal value is: %x\n", hexNumber);  // %x - Hexadecimal format specifier
+
+    int octalNumber = 42;
+    printf("The octal value is: %o\n", octalNumber);  // %o - Octal format specifier
+
+    float scientificValue = 10000.0;
+    printf("The value in scientific notation is: %e\n", scientificValue);  // %e - Scientific notation format specifier
+
+    int *ptr = &number;
+    printf("The address of number is: %p\n", ptr);  // %p - Pointer address format specifier
+
+    return 0;
+}
+
+ Here are 10 programming problems that involve using different `printf` format specifiers:
+
+1. Write a program that prints your name and age using the `%s` and `%d` format specifiers, respectively.
+
+2. Write a program that prints the value of pi (3.14159) using the `%f` format specifier.
+
+3. Write a program that prints a character and its ASCII value using the `%c` and `%d` format specifiers, respectively.
+
+4. Write a program that prints a decimal number in hexadecimal format using the `%x` format specifier.
+
+5. Write a program that prints a decimal number in octal format using the `%o` format specifier.
+
+6. Write a program that prints a float value in scientific notation using the `%e` format specifier.
+
+7. Write a program that prints a string in uppercase using the `%s` and `%c` format specifiers with appropriate modifiers.
+
+8. Write a program that prints a percentage value with two decimal places using the `%f` format specifier and specifying the precision.
+
+9. Write a program that prints a pointer's memory address using the `%p` format specifier.
+
+10. Write a program that prints a boolean value (`1` for true, `0` for false) using the `%d` format specifier.
+
+These problems will help you practice using different format specifiers and modifiers to display various types of data in a formatted manner using `printf`.
+
